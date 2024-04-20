@@ -40,7 +40,7 @@ def get_contact(current_user_token):
 @api.route('/contacts/<id>', methods = ['GET'])
 @token_required
 # the <id> in the slug can now be pulled into the function below "def get_single_contact()"
-def get_single_contact(current_user_token, id)
+def get_single_contact(current_user_token, id):
     contact = Contact.query.get(id)
     response = contact_schema.dump(contact)
     return jsonify(response)
